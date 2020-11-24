@@ -1,19 +1,18 @@
 # dog.py
 class Dog:
-    def __init__(self, name,breed):
+    # Required properties are defined inside the __init__ constructor method
+    def __init__(self, name, breed):
         self.name = name
         self.breed = breed
         print("dog initialized!")
 
+    # Methods are defined as their own named functions inside the class
     def bark(self):
         print("Woof!")
 
-# instantiation call that creates a Dog object:
-# but now we've assigned it to the value of the my_dog variable
+    #Step 1: Stretch Challanges
+    def roll_over(self):
+        print("Rolls Over")
 
-# print(my_dog)
-# print(my_dog.name)
-# # Adding the "breed" property on the fly
-# my_dog.breed = "SuperDog"
-# # will print "SuperDog"
-# print(my_dog.breed)
+    def sit_down(self):
+        print("Sits")
