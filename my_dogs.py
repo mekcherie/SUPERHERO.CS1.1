@@ -10,14 +10,14 @@ my_dog.bark()
 
 print("\n")
 
-my_other_dog = dog.Dog("Mochi", "SuperFluffyDog")
+my_other_dog = dog.Dog("Nany", "SuperSmartDog")
 print(my_other_dog.name)
 print(my_other_dog.breed)
-my_dog.sit_down()
+my_dog.roll_over()
 
 print("\n")
 
-my_third_dog = dog.Dog("Nova", "SuperSpaceDog")
+my_third_dog = dog.Dog("Lacy", "SuperFastDog")
 print(my_third_dog.name)
 print(my_third_dog.breed)
-my_dog.roll_over()
+my_dog.sit_down()

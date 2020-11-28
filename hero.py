@@ -56,3 +56,44 @@ class Hero:
          for armor in self.armors:
              total_block += armor.block()
          return total_block
+     def take_damage(self, damage):
+         '''Updates self.current_health to reflect the damage minus the defense.'''
+         self.current_health -= damage + self.defend()
+         if self.current_health < 0:
+             self.current_health = 0
+
+     def is_alive(self):  
+         '''Return True or False depending on whether the hero is alive or not.
+         '''
+         if self.current_health <= 0:
+             return False
+         else:
+             return True
+
+     def fight(self, opponent):  
+         ''' Current Hero will take turns fighting the opponent hero passed in.
+         '''
+         if len(self.abilities) == 0 and len(opponent.abilities) == 0:
+             print("Draw")
+             return
+         while self.is_alive() and opponent.is_alive():
+             self.take_damage(opponent.attack())
+             opponent.take_damage(self.attack())
+
+             if self.is_alive() == False:
+                 print(f"{opponent.name} wins!")
+                 self.add_death(1)
+                 opponent.add_kill(1)
+
+             elif opponent.is_alive() == False:
+                 self.add_kill(1)
+                 opponent.add_death(1)
+                 print(f"{self.name} wins!")
+
+
+
+if __name__ == "__main__":
+    hero = Hero("Wonder Woman")
+    weapon = Weapon("Lasso of Truth", 90)
+    hero.add_weapon(weapon)
+    print(hero.attack())
